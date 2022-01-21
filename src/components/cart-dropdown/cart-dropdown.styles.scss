@@ -11,12 +11,19 @@
   right: 40px;
   z-index: 5;
 
+  .empty-message {
+    display: flex;
+    font-size: 24px;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .cart-items {
     height: 240px;
     display: flex;
     flex-direction: column;
-    overflow  : scroll;
-    
+    overflow: scroll;
   }
 
   button {
