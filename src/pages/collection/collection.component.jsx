@@ -11,7 +11,7 @@ import {
 } from "./collection.styles";
 
 function CollectionPage() {
-  let { collectionId } = useParams();
+  const { collectionId } = useParams();
   const { title, items } = useSelector(selectCollection(collectionId));
 
   return (
