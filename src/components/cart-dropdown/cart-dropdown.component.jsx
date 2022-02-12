@@ -14,7 +14,7 @@ import {
   CartItemsContainer,
 } from "./cart-dropdown.styles";
 
-function CartDropdown({ cartItems, dispatch }) {
+function CartDropdown({ cartItems, currentUser, dispatch }) {
   let navigate = useNavigate();
 
   return (
@@ -32,11 +32,11 @@ function CartDropdown({ cartItems, dispatch }) {
       </CartItemsContainer>
       <CartDropdownButton
         onClick={() => {
-          navigate("/checkout");
+          navigate(currentUser ? "/checkout" : "/signin");
           dispatch(toggleCartHidden());
         }}
       >
-        Go TO CHECKOUT
+        {currentUser ? "GO TO CHECKOUT" : "SIGN IN TO CHECKOUT"}
       </CartDropdownButton>
     </CartDropdownContainer>
   );
